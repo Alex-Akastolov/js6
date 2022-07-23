@@ -27,14 +27,6 @@ function playSlideShow() {
 
 let pausePlay = () => isPlaying ? pauseSlideShow() : playSlideShow();
 
-// pauseButton.onclick = function () {
-//     if (isPlaying) {
-//         pauseSlideShow();
-//     } else {
-//         playSlideShow();
-//     }
-// }
-
 pauseButton.addEventListener('click', pausePlay)
 
 function nextSlide() {
