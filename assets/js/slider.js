@@ -1,4 +1,3 @@
-let isPlaying = true;
 
 function createContainer() {
     container = document.createElement('div');
@@ -6,21 +5,19 @@ function createContainer() {
 
     document.querySelector('body').append(container);
 
-    // container = document.querySelector('.container')
 }
 
 function createContent(n) {
-    slidesContainer = document.createElement('ul');
-    slidesContainer.setAttribute('class', 'slides');
+    slides = document.createElement('ul');
+    slides.setAttribute('class', 'slides');
 
     for (i = 0; i < n; i++) {
         slide = document.createElement('li');
         slide.setAttribute('class', i === 0 ? 'slide active' : 'slide');
-        slidesContainer.append(slide)
+        slides.append(slide)
     };
 
-    container.append(slidesContainer);
-    // slidesContainer = document.querySelector('.slides');
+    container.append(slides);
 }
 
 function createControls() {
@@ -33,6 +30,10 @@ function createControls() {
 
     controls.innerHTML = PAUSE + PREV + NEXT;
     container.append(controls);
+
+    pauseBtn = document.querySelector('#pause');
+    prevBtn = document.querySelector('#prev');
+    nextBtn = document.querySelector('#next');
 }
 
 function createIndicators(n) {
@@ -49,6 +50,7 @@ function createIndicators(n) {
     container.append(indicators)
 }
 
+
 function init(slidesCount = 5) {
     createContainer();
     createContent(slidesCount);
@@ -58,4 +60,3 @@ function init(slidesCount = 5) {
 }
 
 init()
-
